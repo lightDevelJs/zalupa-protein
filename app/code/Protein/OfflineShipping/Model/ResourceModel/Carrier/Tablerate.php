@@ -13,6 +13,12 @@ namespace Protein\OfflineShipping\Model\ResourceModel\Carrier;
 
 use Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate as NativeTablerate;
 
+use Magento\Framework\Filesystem;
+use Magento\Framework\Filesystem\DirectoryList;
+use Protein\OfflineShipping\Model\ResourceModel\Carrier\Tablerate\Import;
+use Protein\OfflineShipping\Model\ResourceModel\Carrier\Tablerate\RateQuery;
+use Protein\OfflineShipping\Model\ResourceModel\Carrier\Tablerate\RateQueryFactory;
+
 /**
  * Class Tablerate
  * @package Protein\OfflineShipping\Model\ResourceModel\Carrier
@@ -131,7 +137,7 @@ class Tablerate extends NativeTablerate
      * @param \Psr\Log\LoggerInterface $logger
      * @param \Magento\Framework\App\Config\ScopeConfigInterface $coreConfig
      * @param \Magento\Store\Model\StoreManagerInterface $storeManager
-     * @param \Magento\OfflineShipping\Model\Carrier\Tablerate $carrierTablerate
+     * @param \Protein\OfflineShipping\Model\Carrier\Tablerate $carrierTablerate
      * @param Filesystem $filesystem
      * @param RateQueryFactory $rateQueryFactory
      * @param Import $import
@@ -142,7 +148,7 @@ class Tablerate extends NativeTablerate
         \Psr\Log\LoggerInterface $logger,
         \Magento\Framework\App\Config\ScopeConfigInterface $coreConfig,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
-        \Magento\OfflineShipping\Model\Carrier\Tablerate $carrierTablerate,
+        \Protein\OfflineShipping\Model\Carrier\Tablerate $carrierTablerate,
         \Magento\Framework\Filesystem $filesystem,
         Import $import,
         RateQueryFactory $rateQueryFactory,
@@ -250,6 +256,7 @@ class Tablerate extends NativeTablerate
      */
     public function uploadAndImport(\Magento\Framework\DataObject $object)
     {
+        die('123123123123');
         /**
          * @var \Magento\Framework\App\Config\Value $object
          */
@@ -303,7 +310,7 @@ class Tablerate extends NativeTablerate
         if ($object->getData('groups/proteintablerate/fields/condition_name/inherit') == '1') {
             $conditionName = (string)$this->coreConfig->getValue('carriers/tablerate/condition_name', 'default');
         } else {
-            $conditionName = $object->getData('groups/tablerate/fields/condition_name/value');
+            $conditionName = $object->getData('groups/proteintablerate/fields/condition_name/value');
         }
         return $conditionName;
     }
@@ -343,6 +350,7 @@ class Tablerate extends NativeTablerate
      */
     protected function _saveImportData(array $data)
     {
+        die('123');
         if (!empty($data)) {
             $columns = [
                 'website_id',

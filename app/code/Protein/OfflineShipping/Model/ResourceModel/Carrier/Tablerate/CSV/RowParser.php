@@ -4,7 +4,7 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate\CSV;
+namespace Protein\OfflineShipping\Model\ResourceModel\Carrier\Tablerate\CSV;
 
 use Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate\CSV\ColumnResolver as NativeRowParser;
 use Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate\LocationDirectory;

@@ -43,8 +43,12 @@ class Tablerate extends \Magento\Framework\App\Config\Value
      */
     public function afterSave()
     {
+
         /** @var \Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate $tableRate */
         $tableRate = $this->_tablerateFactory->create();
+        die(
+            'Protein\OfflineShipping\Model\Config\Backend\Tablerate'
+        );
         $tableRate->uploadAndImport($this);
         return parent::afterSave();
     }

@@ -76,10 +76,10 @@ class InstallSchema implements InstallSchemaInterface
         )->addIndex(
             $installer->getIdxName(
                 'protein_shipping_tablerate',
-                ['website_id', 'dest_country_id', 'dest_region_id', 'dest_zip', 'condition_name', 'condition_value'],
+                ['website_id', 'dest_country_id', 'dest_region_id', 'dest_zip'],
                 \Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_UNIQUE
             ),
-            ['website_id', 'dest_country_id', 'dest_region_id', 'dest_zip', 'condition_name', 'condition_value'],
+            ['website_id', 'dest_country_id', 'dest_region_id', 'dest_zip', ],
             ['type' => \Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_UNIQUE]
         )->setComment(
             'Protein Shipping Tablerate'
