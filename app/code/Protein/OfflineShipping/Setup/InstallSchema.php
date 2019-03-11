@@ -30,7 +30,7 @@ class InstallSchema implements InstallSchemaInterface
          * Create table 'shipping_tablerate'
          */
         $table = $installer->getConnection()->newTable(
-            $installer->getTable('shipping_proteintablerate')
+            $installer->getTable('protein_shipping_tablerate')
         )->addColumn(
             'pk',
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
@@ -62,18 +62,6 @@ class InstallSchema implements InstallSchemaInterface
             ['nullable' => false, 'default' => '*'],
             'Destination Post Code (Zip)'
         )->addColumn(
-            'condition_name',
-            \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
-            20,
-            ['nullable' => false],
-            'Rate Condition name'
-        )->addColumn(
-            'condition_value',
-            \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,
-            '12,4',
-            ['nullable' => false, 'default' => '0.0000'],
-            'Rate condition value'
-        )->addColumn(
             'price',
             \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,
             '12,4',
@@ -87,14 +75,14 @@ class InstallSchema implements InstallSchemaInterface
             'Cost'
         )->addIndex(
             $installer->getIdxName(
-                'shipping_tablerate',
+                'protein_shipping_tablerate',
                 ['website_id', 'dest_country_id', 'dest_region_id', 'dest_zip', 'condition_name', 'condition_value'],
                 \Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_UNIQUE
             ),
             ['website_id', 'dest_country_id', 'dest_region_id', 'dest_zip', 'condition_name', 'condition_value'],
             ['type' => \Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_UNIQUE]
         )->setComment(
-            'Shipping Tablerate'
+            'Protein Shipping Tablerate'
         );
         $installer->getConnection()->createTable($table);
 
