@@ -7,8 +7,8 @@ define([
     'uiComponent',
     'Magento_Checkout/js/model/shipping-rates-validator',
     'Magento_Checkout/js/model/shipping-rates-validation-rules',
-    '../../model/shipping-rates-validator/tablerate',
-    '../../model/shipping-rates-validation-rules/tablerate'
+    '../../model/shipping-rates-validator/proteintablerate',
+    '../../model/shipping-rates-validation-rules/proteintablerate'
 ], function (
     Component,
     defaultShippingRatesValidator,
@@ -18,8 +18,8 @@ define([
 ) {
     'use strict';
 
-    defaultShippingRatesValidator.registerValidator('tablerate', tablerateShippingRatesValidator);
-    defaultShippingRatesValidationRules.registerRules('tablerate', tablerateShippingRatesValidationRules);
+    defaultShippingRatesValidator.registerValidator('proteintablerate', tablerateShippingRatesValidator);
+    defaultShippingRatesValidationRules.registerRules('proteintablerate', tablerateShippingRatesValidationRules);
 
     return Component;
 });
