@@ -23,7 +23,7 @@ use Protein\OfflineShipping\Model\ResourceModel\Carrier\Tablerate\RateQueryFacto
  * Class Tablerate
  * @package Protein\OfflineShipping\Model\ResourceModel\Carrier
  */
-class Tablerate extends NativeTablerate
+class Tablerate extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
     /**
      * Import table rates website ID
@@ -162,6 +162,7 @@ class Tablerate extends NativeTablerate
         $this->filesystem = $filesystem;
         $this->import = $import;
         $this->rateQueryFactory = $rateQueryFactory;
+
     }
 
     /**
@@ -256,7 +257,6 @@ class Tablerate extends NativeTablerate
      */
     public function uploadAndImport(\Magento\Framework\DataObject $object)
     {
-        die('123123123123');
         /**
          * @var \Magento\Framework\App\Config\Value $object
          */

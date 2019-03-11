@@ -6,7 +6,7 @@
 
 namespace Protein\OfflineShipping\Model\ResourceModel\Carrier\Tablerate\CSV;
 
-use Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate\CSV\ColumnResolver as NativeRowParser;
+use Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate\CSV\RowParser as NativeRowParser;
 use Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate\LocationDirectory;
 
 class RowParser extends NativeRowParser
